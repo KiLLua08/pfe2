@@ -1,0 +1,38 @@
+/* Backdrop styling */
+.custom-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    /* Lower than modal */
+    display: block;
+    /* Ensure it's visible */
+}
+
+/* Modal styling */
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    /* Higher than backdrop */
+    width: 80%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    display: block;
+    /* Ensure it's visible */
+}
+
+
+/* Additional optional styles for modal content */
+.modal-content {
+    border-radius: 4px;
+    /* Optional: rounded corners for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Optional: shadow */
+}

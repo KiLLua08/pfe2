@@ -1,0 +1,240 @@
+/* Overall chat button styling */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8b3dff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it is above other elements */
+}
+
+.chat-button:hover {
+    background-color: #7634d9;
+}
+
+/* Chat box styling */
+.chat-box {
+    position: fixed;
+    bottom: 90px; /* Adjust based on the height of the chat button */
+    right: 20px;
+    width: 400px;
+    max-width: 100%;
+    max-height: 80vh; /* Increased maximum height for better visibility */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000; /* Ensure it is below the chat button */
+    overflow: hidden; /* Ensures content does not overflow */
+}
+
+/* Ensure the chat content takes up remaining space */
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Style for chat header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-header p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Style for close button */
+.close-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Messages area */
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px; /* Increased margin to separate from input */
+}
+
+/* Scrollbar customization */
+.chat-box::-webkit-scrollbar {
+    width: 8px; /* Slightly wider scrollbar for better usability */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: transparent; /* Hide scrollbar track */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Subtle color for the scrollbar handle */
+    border-radius: 10px; /* Rounded corners for the handle */
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5); /* Darker color on hover */
+}
+
+/* Styling for message bubbles */
+.message {
+    position: relative; /* Required for positioning the tooltip */
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word; /* Ensure long words break correctly */
+    transition: background-color 0.3s ease; /* Smooth transition for any background color change */
+}
+
+.message::after {
+    content: attr(data-created-at);
+    position: absolute;
+    bottom: 100%; /* Position above the message */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.message:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+.message-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 80%; /* Increased max-width for better message display */
+    word-wrap: break-word; /* Ensure long words break correctly */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.message-content p {
+    margin: 0;
+}
+
+/* Form styling */
+.chat-input-form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.chat-input-form textarea {
+    flex-grow: 1;
+    resize: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.chat-input-form button {
+    background: #8b3dff; /* Updated color to match chat button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px; /* Adjusted font size for better readability */
+}
+
+.chat-input-form button:hover {
+    background: #7634d9; /* Hover color to match chat button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .chat-box {
+        width: 90%;
+        bottom: 70px;
+    }
+
+    .chat-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+.chat-form {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Vertically center the items */
+    gap: 10px; /* Space between the input and button */
+}
+
+.chat-form .form-control {
+    flex: 1; /* Allow the input to take available space */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.chat-form .btn {
+    flex-shrink: 0; /* Prevent the button from shrinking */
+}
+.chat-creation-container {
+    padding: 20px; /* Add padding inside the container */
+    margin: 10px; /* Add margin around the container */
+    border-radius: 10px; /* Rounded corners for better appearance */
+    background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+/* Heading styling */
+.chat-creation-container h3 {
+    margin-bottom: 15px; /* Space between headings */
+    font-size: 18px; /* Slightly larger font for headings */
+    font-weight: bold;
+}
+
+/* Paragraph styling */
+.chat-creation-container p {
+    margin-top: 15px; /* Space above the paragraph */
+    font-size: 16px;
+}

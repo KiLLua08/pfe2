@@ -1,0 +1,304 @@
+/* Sprints.css */
+
+
+.card-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sprint-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dnd-container {
+    display: flex;
+    gap: 10px;
+}
+
+.column {
+    flex: 1;
+}
+
+.highlight {
+    background-color: #f0f8ff;
+    border: 2px dashed #007bff;
+}
+
+/* SprintModal.css */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    max-width: 100%;
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    width: 400px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+}
+
+.close {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal-body {
+    margin-top: 15px;
+}
+
+.modal-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+.sticky-column {
+    position: -webkit-sticky;
+    /* For Safari */
+    position: sticky;
+    top: 0;
+    border-radius: 15px;
+    /* Adjust based on where you want the column to stick */
+    background-color: #fff;
+    /* Optional: to ensure the column has a background */
+    z-index: 1000;
+    /* Optional: to ensure it stays on top of other content */
+    height: 100vh;
+    /* Optional: ensure it takes the full height of the viewport */
+    overflow-y: auto;
+    /* Allows scrolling within the sticky column if needed */
+}
+
+/* Ensure to include these styles in Sprints.css */
+
+.card-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.card-hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-lift {
+    transition: transform 0.2s ease;
+}
+
+.card-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+.sprint-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 10px;
+}
+
+.sprint-container.over {
+    border-color: green;
+    background-color: #e8f5e9;
+}
+
+.story-list {
+    margin-top: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sprints.css */
+/* Sprints.css */
+
+/* Ensure full width and minimal height for items in sprint */
+.full-width-item {
+    width: 100%;
+    /* Full width */
+    margin-bottom: 16px;
+    /* Adjust spacing as needed */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+/* Ensure full width and minimal height for items in sprint */
+.full-width-item {
+    width: 100%;
+    /* Full width */
+    margin-bottom: 16px;
+    /* Adjust spacing as needed */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+/* Ensure the content container adjusts its height based on content */
+.full-width-item .card-hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+    padding: 0;
+    /* Remove all padding */
+    margin: 0;
+    /* Remove all margin */
+    width: 100%;
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+    overflow: hidden;
+    /* Hide any overflow content */
+}
+
+/* Flex container for title and remove icon */
+.card-hover .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+/* Title styling */
+.card-hover .card-text {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove padding if needed */
+}
+
+/* Optional: Style for remove icon */
+.card-hover .bi-trash {
+    cursor: pointer;
+    /* Change cursor to pointer for clickable icon */
+    font-size: 1.25rem;
+    /* Adjust icon size as needed */
+    margin: 0;
+    /* Remove margin around icon */
+}
+
+/* Custom styles for the larger modal */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-modal-lg {
+    max-width: 40%;
+    /* Adjust the width as needed */
+    width: 100%;
+}
+
+.custom-modal-lg .modal-content {
+    width: 100%;
+}
